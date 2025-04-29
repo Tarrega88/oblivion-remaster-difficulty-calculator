@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ember-50: #fff4e6;
+  --color-ember-100: #ffe1c7;
+  --color-ember-200: #ffc899;
+  --color-ember-300: #ffae6b;
+  --color-ember-400: #ff9440;
+  --color-ember-500: #ff6600; /* base */
+  --color-ember-600: #e05500;
+  --color-ember-700: #b84500;
+  --color-ember-800: #8e3300;
+  --color-ember-900: #672400;
+  --color-ember-950: #3d1300;
+
+  /* ⚔️ Molten Steel */
+  --color-molten-50: #f7ede8;
+  --color-molten-100: #f1d5c6;
+  --color-molten-200: #e4b199;
+  --color-molten-300: #d7846a;
+  --color-molten-400: #cb573d;
+  --color-molten-500: #d84a00; /* base */
+  --color-molten-600: #b33f00;
+  --color-molten-700: #8f3200;
+  --color-molten-800: #6c2500;
+  --color-molten-900: #471800;
+  --color-molten-950: #250b00;
+
+  /* 🩸 Ash & Ember */
+  --color-inferno-50: #eae6e4;
+  --color-inferno-100: #cfc5c2;
+  --color-inferno-200: #a58f86;
+  --color-inferno-300: #816e5f;
+  --color-inferno-400: #5e4b3d;
+  --color-inferno-500: #3c2c21;
+  --color-inferno-600: #2e1e17;
+  --color-inferno-700: #1f130f;
+  --color-inferno-800: #1a0d0a; /* base */
+  --color-inferno-900: #100805;
+  --color-inferno-950: #070302;
+
+  --color-ironshade-50: #ececec;
+  --color-ironshade-100: #cfcfcf;
+  --color-ironshade-200: #a3a3a3;
+  --color-ironshade-300: #7a7a7a;
+  --color-ironshade-400: #525252;
+  --color-ironshade-500: #2f2f2f; /* steel midtone */
+  --color-ironshade-600: #232323;
+  --color-ironshade-700: #181818;
+  --color-ironshade-800: #0f0f0f;
+  --color-ironshade-900: #080808;
+  --color-ironshade-950: #030303;
+
+  --color-oblivioncore-50: #fef2ec;
+  --color-oblivioncore-100: #fdd7c4;
+  --color-oblivioncore-200: #fcb18b;
+  --color-oblivioncore-300: #fa874e;
+  --color-oblivioncore-400: #f65f1e;
+  --color-oblivioncore-500: #d83f00; /* deep ember orange */
+  --color-oblivioncore-600: #aa3200;
+  --color-oblivioncore-700: #7c2400;
+  --color-oblivioncore-800: #4f1600;
+  --color-oblivioncore-900: #2a0a00;
+  --color-oblivioncore-950: #140500;
+
+  --color-flamegold-50: #fff9e6;
+  --color-flamegold-100: #fff0bf;
+  --color-flamegold-200: #ffe88f;
+  --color-flamegold-300: #ffde5c;
+  --color-flamegold-400: #ffd22d;
+  --color-flamegold-500: #ffbe00; /* bright center of flame */
+  --color-flamegold-600: #e6a900;
+  --color-flamegold-700: #b88600;
+  --color-flamegold-800: #8f6700;
+  --color-flamegold-900: #5c4400;
+  --color-flamegold-950: #2f2300;
+}
+
+body {
+  font-family: "Cinzel", serif;
+}
