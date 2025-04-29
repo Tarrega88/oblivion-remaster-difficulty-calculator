@@ -2,6 +2,7 @@ import { useState } from "react";
 import TableRow from "./ui/TableRow";
 import TableHeader from "./ui/TableHeader";
 import { allDifficulties } from "./helpers/generateAllDifficulties";
+import { decimalToPercentNum } from "./helpers/conversions";
 
 /*
 sliderModName
@@ -17,18 +18,49 @@ const headers = [
 ];
 
 function TableDisplay() {
-  // const [minDealt, setMinDealt] = useState(75);
-  // const [maxDealt, setMaxDealt] = useState(300);
+  const [useMinDealtFilter, setUseMinDealtFilter] = useState(false);
+  const [useMaxDealtFilter, setUseMaxDealtFilter] = useState(false);
+  const [useMinTakenFilter, setUseMinTakenFilter] = useState(false);
+  const [useMaxTakenFilter, setUseMaxTakenFilter] = useState(false);
+  const [useMinRelativeFilter, setUseMinRelativeFilter] = useState(false);
+  const [useMaxRelativeFilter, setUseManRelativeFilter] = useState(false);
 
-  // const [minTaken, setMinTaken] = useState(80);
-  // const [maxTaken, setMaxTaken] = useState(500);
+  const [minDealt, setMinDealt] = useState(75);
+  const [maxDealt, setMaxDealt] = useState(300);
+  const [minTaken, setMinTaken] = useState(80);
+  const [maxTaken, setMaxTaken] = useState(500);
+  const [minRelative, setMinRelative] = useState(16);
+  const [maxRelative, setMaxRelative] = useState(156);
 
-  // const [minRelative, setMinRelative] = useState(16);
-  // const [maxRelative, setMaxRelative] = useState(156);
+  const filteredDifficulties = allDifficulties.filter((e) => {
+    if (useMinDealtFilter && decimalToPercentNum(e.dealt) < minDealt)
+      return false;
+    if (useMaxDealtFilter && decimalToPercentNum(e.dealt) > maxDealt)
+      return false;
+    if (useMinTakenFilter && decimalToPercentNum(e.taken) < minTaken)
+      return false;
+    if (useMaxTakenFilter && decimalToPercentNum(e.taken) > maxTaken)
+      return false;
+    if (
+      useMinRelativeFilter &&
+      decimalToPercentNum(e.relativeStrength) < minRelative
+    )
+      return false;
+    if (
+      useMaxRelativeFilter &&
+      decimalToPercentNum(e.relativeStrength) > maxRelative
+    )
+      return false;
+    return true;
+  });
 
   const [sortMethod, setSortMethod] = useState("relativeStrength");
   const [isAscending, setIsAscending] = useState(false);
-  const [sorted, setSorted] = useState(allDifficulties);
+  const [sorted, setSorted] = useState(
+    filteredDifficulties.toSorted(
+      (a, b) => b.relativeStrength - a.relativeStrength
+    )
+  );
 
   function handleSorting(sortKey) {
     const isNumeric = ["taken", "dealt", "relativeStrength"].includes(sortKey);
@@ -39,8 +71,8 @@ function TableDisplay() {
     setIsAscending(newIsAscending);
     setSortMethod(sortKey);
 
-    setSorted((prevSorted) =>
-      [...prevSorted].sort((a, b) => {
+    setSorted(() =>
+      filteredDifficulties.toSorted((a, b) => {
         if (isNumeric) {
           return newIsAscending
             ? a[sortKey] - b[sortKey]
@@ -55,7 +87,7 @@ function TableDisplay() {
   }
 
   return (
-    <div className="grid grid-cols-6">
+    <div className="grid grid-cols-6 px-8 bg-ironshade-800">
       {headers.map((e, i) => (
         <TableHeader
           data={e}

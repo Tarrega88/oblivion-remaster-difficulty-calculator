@@ -1,5 +1,4 @@
 @import "tailwindcss";
-
 @theme {
   --color-ember-50: #fff4e6;
   --color-ember-100: #ffe1c7;
@@ -74,6 +73,66 @@
   --color-flamegold-800: #8f6700;
   --color-flamegold-900: #5c4400;
   --color-flamegold-950: #2f2300;
+
+  --color-copper-50: #fef9f6;
+  --color-copper-100: #fceee3;
+  --color-copper-200: #f6d2b7;
+  --color-copper-300: #ecb884;
+  --color-copper-400: #e29956;
+  --color-copper-500: #b87333;
+  --color-copper-600: #965c29;
+  --color-copper-700: #75461f;
+  --color-copper-800: #563415;
+  --color-copper-900: #39210d;
+  --color-copper-950: #1f1206;
+
+  --color-ash-50: #f9f9f9;
+  --color-ash-100: #f2f2f2;
+  --color-ash-200: #e5e5e5;
+  --color-ash-300: #cccccc;
+  --color-ash-400: #b3b3b3;
+  --color-ash-500: #a0a0a0;
+  --color-ash-600: #8c8c8c;
+  --color-ash-700: #757575;
+  --color-ash-800: #5c5c5c;
+  --color-ash-900: #3f3f3f;
+  --color-ash-950: #262626;
+
+  --color-stonegray-50: #f8f8f8;
+  --color-stonegray-100: #e6e6e6;
+  --color-stonegray-200: #cbcbcb;
+  --color-stonegray-300: #a5a5a5;
+  --color-stonegray-400: #7d7d7d;
+  --color-stonegray-500: #5e5e5e;
+  --color-stonegray-600: #484848;
+  --color-stonegray-700: #363636;
+  --color-stonegray-800: #262626;
+  --color-stonegray-900: #161616;
+  --color-stonegray-950: #0c0c0c;
+
+  --color-cobble-50: #faf9f8;
+  --color-cobble-100: #e8e6e4;
+  --color-cobble-200: #cfcac5;
+  --color-cobble-300: #b1aaa1;
+  --color-cobble-400: #938b82;
+  --color-cobble-500: #786f6a;
+  --color-cobble-600: #5e5652;
+  --color-cobble-700: #47403c;
+  --color-cobble-800: #322c28;
+  --color-cobble-900: #1f1b18;
+  --color-cobble-950: #0e0b09;
+
+  --color-emeraldshade-50: #f0faf5;
+  --color-emeraldshade-100: #d1f2e1;
+  --color-emeraldshade-200: #a7e3c8;
+  --color-emeraldshade-300: #6fd0a6;
+  --color-emeraldshade-400: #3fbb87;
+  --color-emeraldshade-500: #25a06f; /* Primary emerald */
+  --color-emeraldshade-600: #1b825b;
+  --color-emeraldshade-700: #15674a;
+  --color-emeraldshade-800: #104d3a;
+  --color-emeraldshade-900: #0a3227;
+  --color-emeraldshade-950: #051c16;
 }
 
 body {

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Toggle from "./ui/Toggle";
 
 function UserFilters() {
   /*
@@ -12,7 +13,13 @@ const filters = {
 }
 */
 
-  return <div>Filters</div>;
+  const [isOn, setIsOn] = useState(false);
+
+  return (
+    <div>
+      <Toggle isOn={isOn} setIsOn={setIsOn} />
+    </div>
+  );
 }
 
 export default UserFilters;

@@ -22,7 +22,7 @@ function TableRow({ data, isOdd }) {
       <TableCell text={difficultyName} isOdd={isOdd} />
       <TableCell text={takenPercent} isOdd={isOdd} />
       <TableCell text={dealtPercent} isOdd={isOdd} />
-      <TableCell text={relativeStrengthPercent} isOdd={isOdd} />
+      <TableCell text={relativeStrengthPercent} isOdd={isOdd} isLast={true} />
     </>
   );
 }
