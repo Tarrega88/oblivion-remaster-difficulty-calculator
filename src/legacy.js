@@ -8,19 +8,9 @@ import generateAllDifficulties from "./helpers/generateAllDifficulties";
 
 //filters are in percent.
 //These allow the option during table generation to ignore anything outside of their range. For instance, anything greater than 300% dealt damage would be ignored.
-const filters = {
-    maxDealt: 300, //300
-    minDealt: 75, //75
-    maxTaken: 500, //500
-    minTaken: 80, //80
-    maxRelative: 156, //156
-    minRelative: 16 //16
-}
 
 //Whichever versions of the mods we add here, like x2 or x1.5, will take precedence and will not be overwritten if a duplicate of damage taken/damage dealt is found with another combination of the mods and difficulty settings.
 const combinationPrecedence = [{ sliderModVersion: "x2", moreDamageVersion: "x2" }];
-
-const allDifficulties = generateAllDifficulties();
 
 const precedenceSort = allDifficulties.toSorted((a, b) => {
     for (const combo of combinationPrecedence) {
