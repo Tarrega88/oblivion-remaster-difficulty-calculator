@@ -39,7 +39,7 @@ function UserFilters() {
         />
         <div className="flex w-full justify-center py-4">
           <button
-            className="bg-emeraldshade-800 hover:bg-emeraldshade-700 w-48 cursor-pointer transition-all duration-200"
+            className="bg-emeraldshade-800 hover:bg-emeraldshade-700 h-12 w-48 cursor-pointer transition-all duration-200"
             onClick={() => dispatch(revertToRecommended())}
           >
             Use Recommended
