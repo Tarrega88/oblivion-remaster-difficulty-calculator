@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUseFilter, toggleAll } from "./redux/filterSlice";
 import FilterInput from "./ui/FilterInput";
 import SectionHeader from "./ui/SectionHeader";
+import CollapsibleWrapper from "./ui/CollapsibleWrapper";
 
 function UserFilters() {
   const {
@@ -25,8 +26,8 @@ function UserFilters() {
     useMaxRelativeFilter;
 
   return (
-    <div className="px-8 pb-2">
-      <SectionHeader text="Damage Filters" />
+    // <div className="bg-ironshade-700 flex flex-col gap-4 py-4">
+    <CollapsibleWrapper text="Damage Filters" lightHover={false}>
       <div className="flex flex-col gap-4 py-2">
         <Toggle
           isOn={allOn}
@@ -89,7 +90,8 @@ function UserFilters() {
           </Toggle>
         </div>
       </div>
-    </div>
+    </CollapsibleWrapper>
+    // </div>
   );
 }
 

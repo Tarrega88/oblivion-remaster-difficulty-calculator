@@ -1,3 +1,4 @@
+import About from "./About";
 import ModVersionFilters from "./ModVersionFilters";
 import TableDisplay from "./TableDisplay";
 import TitleSection from "./ui/TitleSection";
@@ -7,6 +8,7 @@ function App() {
   return (
     <div className="bg-ironshade-800 text-ironshade-50 h-dvh w-dvw overflow-auto">
       <TitleSection />
+      <About />
       <ModVersionFilters />
       <UserFilters />
       <TableDisplay />

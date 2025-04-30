@@ -12,6 +12,7 @@ import Subheader from "./ui/Subheader";
 import SectionHeader from "./ui/SectionHeader";
 import { useState } from "react";
 import ModFilterInput from "./ui/ModFilterInput";
+import CollapsibleWrapper from "./ui/CollapsibleWrapper";
 
 function ModVersionFilters() {
   const { damageMods, sliderMods } = useSelector((state) => state.mod);
@@ -23,11 +24,14 @@ function ModVersionFilters() {
   const customDamageMod = damageMods[damageMods.length - 1];
 
   return (
-    <div className="flex flex-col gap-4 px-12 py-4">
-      <SectionHeader text="Enabled Mod Versions" />
+    // <div className="bg-ironshade-600 flex flex-col gap-4 py-4">
+    <CollapsibleWrapper text="Enabled Mod Versions" lightHover={true}>
       <div className="flex justify-evenly gap-8">
         <div className="flex w-1/2 flex-col gap-2">
-          <Subheader text="Difficulty Slider Fixed Versions" />
+          <Subheader
+            text="Difficulty Slider Fixed Versions"
+            link="https://www.nexusmods.com/oblivionremastered/mods/58"
+          />
           <Toggle
             text="Toggle All"
             isOn={sliderMods.every((e) => e.isShown)}
@@ -57,7 +61,10 @@ function ModVersionFilters() {
           )}
         </div>
         <div className="flex w-1/2 flex-col gap-2">
-          <Subheader text="More Damage Versions" />
+          <Subheader
+            text="More Damage Versions"
+            link="https://www.nexusmods.com/oblivionremastered/mods/269"
+          />
           <Toggle
             text="Toggle All"
             isOn={damageMods.every((e) => e.isShown)}
@@ -87,7 +94,8 @@ function ModVersionFilters() {
           )}
         </div>
       </div>
-    </div>
+    </CollapsibleWrapper>
+    // </div>
   );
 }
 
