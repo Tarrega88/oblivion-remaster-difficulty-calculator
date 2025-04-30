@@ -1,10 +1,7 @@
-import { to2Decimals, to3Decimals } from "./helpers/conversions";
-import generateAllDifficulties from "./helpers/generateAllDifficulties";
+//This file is legacy code from the other repo - keeping it here temporarily until this is complete.
+
 //Note: I have commented out the other tables on CSV generation near the bottom. Currently, this only generates one file now, which I think makes more sense, but I've left them in as comments in case anyone wants to generate all 3.
 //The HTML render of the table provides a text description of the filters, based on what the "filters" object below is set to.
-
-
-
 
 //filters are in percent.
 //These allow the option during table generation to ignore anything outside of their range. For instance, anything greater than 300% dealt damage would be ignored.
