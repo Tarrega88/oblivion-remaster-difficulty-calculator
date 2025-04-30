@@ -11,7 +11,7 @@ function TableHeader({ data, onClick, isAscending, sortMethod }) {
     >
       <div className="flex items-center gap-2 px-1 text-center">
         <div className="py-2 font-medium">{text}</div>
-        <div className={`text-sm ${arrowColor}`}>{arrow}</div>
+        {isSortKey && <div className={`text-sm ${arrowColor}`}>{arrow}</div>}
       </div>
     </div>
   );

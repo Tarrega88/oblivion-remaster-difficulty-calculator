@@ -1,7 +1,7 @@
 import { decimalToPercentString } from "../helpers/conversions";
 import TableCell from "./TableCell";
 
-function TableRow({ data, isOdd }) {
+function TableRow({ data, isOdd, isBottom }) {
   const {
     sliderModName,
     damageModName,
@@ -17,12 +17,17 @@ function TableRow({ data, isOdd }) {
 
   return (
     <>
-      <TableCell text={sliderModName} isOdd={isOdd} />
-      <TableCell text={damageModName} isOdd={isOdd} />
-      <TableCell text={difficultyName} isOdd={isOdd} />
-      <TableCell text={takenPercent} isOdd={isOdd} />
-      <TableCell text={dealtPercent} isOdd={isOdd} />
-      <TableCell text={relativeStrengthPercent} isOdd={isOdd} isLast={true} />
+      <TableCell text={sliderModName} isOdd={isOdd} isBottom={isBottom} />
+      <TableCell text={damageModName} isOdd={isOdd} isBottom={isBottom} />
+      <TableCell text={difficultyName} isOdd={isOdd} isBottom={isBottom} />
+      <TableCell text={takenPercent} isOdd={isOdd} isBottom={isBottom} />
+      <TableCell text={dealtPercent} isOdd={isOdd} isBottom={isBottom} />
+      <TableCell
+        text={relativeStrengthPercent}
+        isOdd={isOdd}
+        isLast={true}
+        isBottom={isBottom}
+      />
     </>
   );
 }

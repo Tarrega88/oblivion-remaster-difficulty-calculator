@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // import { allDifficulties } from "../helpers/generateAllDifficulties";
 const initialState = {
     // difficulties: allDifficulties,
-    useMaxDealtFilter: false,
+    useMinDealtFilter: false,
     useMaxDealtFilter: false,
     useMinTakenFilter: false,
     useMaxTakenFilter: false,
@@ -26,26 +26,14 @@ const filterSlice = createSlice({
             const filter = action.payload;
             state[filter] = !state[filter];
         },
-        setMinDealt(state, action) {
-            state.minDealt = action.payload;
-        },
-        setMaxDealt(state, action) {
-            state.maxDealt = action.payload;
-        },
-        setMinTaken(state, action) {
-            state.minTaken = action.payload;
-        },
-        setMaxTaken(state, action) {
-            state.maxTaken = action.payload;
-        },
-        setMinRelative(state, action) {
-            state.minRelative = action.payload;
-        },
-        setMaxRelative(state, action) {
-            state.maxRelative = action.payload;
-        },
+
+        setFilterValue(state, action) {
+            const filterType = action.payload.type;
+            const value = action.payload.value;
+            state[filterType] = value;
+        }
     },
 });
 
-export const { setUseFilter, setMinDealt, setMaxDealt, setMinTaken, setMinRelative, setMaxRelative } = filterSlice.actions;
+export const { setUseFilter, setFilterValue } = filterSlice.actions;
 export default filterSlice.reducer;

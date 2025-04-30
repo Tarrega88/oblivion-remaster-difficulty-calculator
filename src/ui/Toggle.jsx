@@ -1,8 +1,20 @@
-function Toggle({ isOn = true, setIsOn }) {
+import FilterInput from "./FilterInput";
+
+function Toggle({ isOn = true, setIsOn, text, children }) {
   /*
     ember, molten, inferno, ironshade, oblivioncore, flamegold
     copper, ash, stonegray, cobble, emeraldshade
 
+    */
+
+  /*
+          <div className="flex w-56 justify-between pl-4">
+            <div className="flex items-center">Min Dealt</div>
+            <Toggle
+              isOn={useMinDealtFilter}
+              setIsOn={() => dispatch(setUseFilter("useMinDealtFilter"))}
+            />
+          </div>
     */
 
   const backgroundColor = isOn
@@ -14,15 +26,20 @@ function Toggle({ isOn = true, setIsOn }) {
   const position = isOn ? "translate-x-[100%]" : "translate-x-[0%]";
 
   return (
-    <div
-      onClick={() => setIsOn(!isOn)}
-      className={`flex h-8 w-24 items-center ${backgroundColor} hover:bg-stonegray-500 mx-2 cursor-pointer px-2 transition-all duration-200`}
-    >
-      {/* <div className="translate-x-"></div> */}
+    <div className="flex w-full items-center justify-evenly">
+      <div className="flex w-48 justify-between">
+        <div className="flex items-center px-2">{text}</div>
+        {children}
+      </div>
       <div
-        className={`text-center ${toggleColor} ${position} h-6 w-10 transition-all duration-200 select-none`}
+        onClick={() => setIsOn(!isOn)}
+        className={`flex h-8 w-24 items-center ${backgroundColor} hover:bg-stonegray-500 mx-2 cursor-pointer px-2 transition-all duration-200`}
       >
-        {isOn ? "On" : "Off"}
+        <div
+          className={`text-center ${toggleColor} ${position} h-6 w-10 transition-all duration-200 select-none`}
+        >
+          {isOn ? "On" : "Off"}
+        </div>
       </div>
     </div>
   );

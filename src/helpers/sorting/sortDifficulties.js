@@ -9,7 +9,7 @@ export function sortDifficulties(arr, sortKey, isAscending) {
 
     const isNumeric = ["taken", "dealt", "relativeStrength"].includes(sortKey);
 
-    return [...arr].sort((a, b) => {
+    return arr.toSorted((a, b) => {
         if (isNumeric) {
             return isAscending ? a[sortKey] - b[sortKey] : b[sortKey] - a[sortKey];
         } else if (sortKey === "difficultyName") {

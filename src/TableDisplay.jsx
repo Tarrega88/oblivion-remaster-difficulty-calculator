@@ -17,29 +17,25 @@ const headers = [
 
 function TableDisplay() {
   const filters = useSelector((state) => state.filter);
-  const filteredDifficulties = filterByUserSettings(allDifficulties, filters);
 
   const [sortMethod, setSortMethod] = useState("relativeStrength");
   const [isAscending, setIsAscending] = useState(false);
-  const [tableDisplay, setTableDisplay] = useState(
-    filteredDifficulties.toSorted(
-      (a, b) => b.relativeStrength - a.relativeStrength,
-    ),
-  );
 
   function handleSorting(sortKey) {
     const isSameColumn = sortMethod === sortKey;
-    const newIsAscending = isSameColumn ? !isAscending : true;
-
-    setIsAscending(newIsAscending);
     setSortMethod(sortKey);
-    setTableDisplay(
-      sortDifficulties(filteredDifficulties, sortKey, newIsAscending),
-    );
+    setIsAscending(isSameColumn ? !isAscending : true);
   }
 
+  const filteredDifficulties = filterByUserSettings(allDifficulties, filters);
+  const sortedDisplay = sortDifficulties(
+    filteredDifficulties,
+    sortMethod,
+    isAscending,
+  );
+
   return (
-    <div className="bg-ironshade-800 grid grid-cols-6 px-8">
+    <div className="bg-ironshade-800 grid grid-cols-6 px-8 pb-16">
       {headers.map((e, i) => (
         <TableHeader
           data={e}
@@ -49,8 +45,13 @@ function TableDisplay() {
           sortMethod={sortMethod}
         />
       ))}
-      {tableDisplay.map((e, i) => (
-        <TableRow data={e} key={i} isOdd={i % 2} />
+      {sortedDisplay.map((e, i) => (
+        <TableRow
+          data={e}
+          key={i}
+          isOdd={i % 2}
+          isBottom={i === sortedDisplay.length - 1}
+        />
       ))}
     </div>
   );
