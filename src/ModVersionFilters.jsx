@@ -26,8 +26,8 @@ function ModVersionFilters() {
   return (
     // <div className="bg-ironshade-600 flex flex-col gap-4 py-4">
     <CollapsibleWrapper text="Enabled Mod Versions" lightHover={true}>
-      <div className="flex flex-col justify-evenly gap-8 sm:flex-row">
-        <div className="flex flex-col gap-2 sm:w-1/2">
+      <div className="flex flex-col justify-evenly gap-8 md:flex-row">
+        <div className="flex flex-col gap-2 md:w-1/2">
           <Subheader
             text="Difficulty Slider Fixed Versions"
             link="https://www.nexusmods.com/oblivionremastered/mods/58"
@@ -60,7 +60,7 @@ function ModVersionFilters() {
             ),
           )}
         </div>
-        <div className="flex flex-col gap-2 sm:w-1/2">
+        <div className="flex flex-col gap-2 md:w-1/2">
           <Subheader
             text="More Damage Versions"
             link="https://www.nexusmods.com/oblivionremastered/mods/269"

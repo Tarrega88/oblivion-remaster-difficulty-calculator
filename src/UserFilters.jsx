@@ -1,6 +1,10 @@
 import Toggle from "./ui/Toggle";
 import { useDispatch, useSelector } from "react-redux";
-import { setUseFilter, toggleAll } from "./redux/filterSlice";
+import {
+  revertToRecommended,
+  setUseFilter,
+  toggleAll,
+} from "./redux/filterSlice";
 import FilterInput from "./ui/FilterInput";
 import SectionHeader from "./ui/SectionHeader";
 import CollapsibleWrapper from "./ui/CollapsibleWrapper";
@@ -33,7 +37,15 @@ function UserFilters() {
           text="Toggle All"
           setIsOn={() => dispatch(toggleAll())}
         />
-        <div className="flex flex-col gap-2 sm:flex-row">
+        <div className="flex w-full justify-center py-4">
+          <button
+            className="bg-emeraldshade-800 hover:bg-emeraldshade-700 w-48 cursor-pointer transition-all duration-200"
+            onClick={() => dispatch(revertToRecommended())}
+          >
+            Set to My Recommended
+          </button>
+        </div>
+        <div className="flex flex-col gap-2 md:flex-row">
           <Toggle
             isOn={useMinDealtFilter}
             setIsOn={() => dispatch(setUseFilter("useMinDealtFilter"))}
@@ -51,7 +63,7 @@ function UserFilters() {
             <FilterInput type="maxDealt" />
           </Toggle>
         </div>
-        <div className="flex flex-col gap-2 sm:flex-row">
+        <div className="flex flex-col gap-2 md:flex-row">
           <Toggle
             isOn={useMinTakenFilter}
             setIsOn={() => dispatch(setUseFilter("useMinTakenFilter"))}
@@ -69,7 +81,7 @@ function UserFilters() {
             <FilterInput type="maxTaken" />
           </Toggle>
         </div>
-        <div className="flex flex-col gap-2 sm:flex-row">
+        <div className="flex flex-col gap-2 md:flex-row">
           <Toggle
             isOn={useMinRelativeFilter}
             setIsOn={() => dispatch(setUseFilter("useMinRelativeFilter"))}

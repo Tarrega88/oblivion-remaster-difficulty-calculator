@@ -69,7 +69,7 @@ function TableDisplay() {
     <div>
       <SectionHeader text="Difficulty Table" />
 
-      <div className="overflow-x-auto">
+      <div>
         <div className="bg-ironshade-800 grid min-w-[800px] grid-cols-[1fr_4fr_4fr_4fr_3fr_3fr_3fr] px-8 pb-16">
           <TableHeader data={{ text: "Row" }} canClick={false} />
           {headers.map((e, i) => (
