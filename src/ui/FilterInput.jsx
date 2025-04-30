@@ -15,12 +15,15 @@ function FilterInput({ isOn, type }) {
   }
 
   return (
-    <div className="w-14">
+    <div className="relative w-16">
       <input
-        className="bg-stonegray-600 w-14 text-center"
+        className="bg-stonegray-600 w-full pr-4 text-center"
         onChange={handleInput}
         value={filter[type]}
-      ></input>
+      />
+      <span className="text-stonegray-300 pointer-events-none absolute top-1/2 right-1 -translate-y-1/2 text-sm">
+        %
+      </span>
     </div>
   );
 }

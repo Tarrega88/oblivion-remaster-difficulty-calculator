@@ -133,6 +133,18 @@
   --color-emeraldshade-800: #104d3a;
   --color-emeraldshade-900: #0a3227;
   --color-emeraldshade-950: #051c16;
+
+  --color-parchment-50: #fefcf7;
+  --color-parchment-100: #fdf6e3;
+  --color-parchment-200: #f7eed3;
+  --color-parchment-300: #efe3bb;
+  --color-parchment-400: #e4d3a3;
+  --color-parchment-500: #d2bc84; /* main creamy tone */
+  --color-parchment-600: #b79e68;
+  --color-parchment-700: #957d4e;
+  --color-parchment-800: #6f5c39;
+  --color-parchment-900: #493e27;
+  --color-parchment-950: #2a2414;
 }
 
 body {

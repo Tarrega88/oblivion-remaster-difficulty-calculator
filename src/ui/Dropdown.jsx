@@ -1,6 +1,6 @@
 function Dropdown({ options = [] }) {
   return (
-    <select>
+    <select className="bg-ironshade-300">
       {options.map((e, i) => (
         <option key={i}>{e}</option>
       ))}

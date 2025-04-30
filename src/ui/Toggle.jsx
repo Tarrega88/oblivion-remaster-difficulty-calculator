@@ -1,6 +1,6 @@
 import FilterInput from "./FilterInput";
 
-function Toggle({ isOn = true, setIsOn, text, children }) {
+function Toggle({ isOn = true, setIsOn, text, tooltip, children }) {
   /*
     ember, molten, inferno, ironshade, oblivioncore, flamegold
     copper, ash, stonegray, cobble, emeraldshade
@@ -26,9 +26,11 @@ function Toggle({ isOn = true, setIsOn, text, children }) {
   const position = isOn ? "translate-x-[100%]" : "translate-x-[0%]";
 
   return (
-    <div className="flex w-full items-center justify-evenly">
+    <div className="flex w-full items-center justify-center gap-4">
       <div className="flex w-48 justify-between">
-        <div className="flex items-center px-2">{text}</div>
+        <div className="flex px-2" title={tooltip}>
+          {text}
+        </div>
         {children}
       </div>
       <div

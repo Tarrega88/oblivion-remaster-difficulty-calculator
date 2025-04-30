@@ -18,13 +18,14 @@ function UserFilters() {
 
   return (
     <div className="px-8 pb-2">
-      <SectionHeader text="Filters" />
+      <SectionHeader text="Damage Filters" />
       <div className="flex flex-col gap-4 py-2">
         <div className="flex">
           <Toggle
             isOn={useMinDealtFilter}
             setIsOn={() => dispatch(setUseFilter("useMinDealtFilter"))}
             text="Min Dealt"
+            tooltip="The minimum percent of damage your character can deal in comparison to Vanilla Adept."
           >
             <FilterInput type="minDealt" />
           </Toggle>
@@ -32,6 +33,7 @@ function UserFilters() {
             isOn={useMaxDealtFilter}
             setIsOn={() => dispatch(setUseFilter("useMaxDealtFilter"))}
             text="Max Dealt"
+            tooltip="The maximum percent of damage your character can deal in comparison to Vanilla Adept."
           >
             <FilterInput type="maxDealt" />
           </Toggle>
@@ -41,6 +43,7 @@ function UserFilters() {
             isOn={useMinTakenFilter}
             setIsOn={() => dispatch(setUseFilter("useMinTakenFilter"))}
             text="Min Taken"
+            tooltip="The minimum percent of damage your character can take in comparison to Vanilla Adept."
           >
             <FilterInput type="minTaken" />
           </Toggle>
@@ -48,6 +51,7 @@ function UserFilters() {
             isOn={useMaxTakenFilter}
             setIsOn={() => dispatch(setUseFilter("useMaxTakenFilter"))}
             text="Max Taken"
+            tooltip="The maximum percent of damage your character can take in comparison to Vanilla Adept."
           >
             <FilterInput type="maxTaken" />
           </Toggle>
@@ -57,6 +61,7 @@ function UserFilters() {
             isOn={useMinRelativeFilter}
             setIsOn={() => dispatch(setUseFilter("useMinRelativeFilter"))}
             text="Min Relative"
+            tooltip="Relative strength is how much stronger or weaker your character is compared to enemies. 100% is equal. Anything less means you are weaker."
           >
             <FilterInput type="minRelative" />
           </Toggle>
@@ -65,6 +70,7 @@ function UserFilters() {
             isOn={useMaxRelativeFilter}
             setIsOn={() => dispatch(setUseFilter("useMaxRelativeFilter"))}
             text="Max Relative"
+            tooltip="Relative strength is how much stronger or weaker your character is compared to enemies. 100% is equal. Anything more means you are stronger."
           >
             <FilterInput type="maxRelative" />
           </Toggle>

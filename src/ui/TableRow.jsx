@@ -15,18 +15,46 @@ function TableRow({ data, isOdd, isBottom }) {
   const dealtPercent = decimalToPercentString(dealt);
   const relativeStrengthPercent = decimalToPercentString(relativeStrength);
 
+  const isVanilla = sliderModName === "Vanilla" && damageModName === "Vanilla";
+
   return (
     <>
-      <TableCell text={sliderModName} isOdd={isOdd} isBottom={isBottom} />
-      <TableCell text={damageModName} isOdd={isOdd} isBottom={isBottom} />
-      <TableCell text={difficultyName} isOdd={isOdd} isBottom={isBottom} />
-      <TableCell text={takenPercent} isOdd={isOdd} isBottom={isBottom} />
-      <TableCell text={dealtPercent} isOdd={isOdd} isBottom={isBottom} />
+      <TableCell
+        text={sliderModName}
+        isOdd={isOdd}
+        isBottom={isBottom}
+        isVanilla={isVanilla}
+      />
+      <TableCell
+        text={damageModName}
+        isOdd={isOdd}
+        isBottom={isBottom}
+        isVanilla={isVanilla}
+      />
+      <TableCell
+        text={difficultyName}
+        isOdd={isOdd}
+        isBottom={isBottom}
+        isVanilla={isVanilla}
+      />
+      <TableCell
+        text={takenPercent}
+        isOdd={isOdd}
+        isBottom={isBottom}
+        isVanilla={isVanilla}
+      />
+      <TableCell
+        text={dealtPercent}
+        isOdd={isOdd}
+        isBottom={isBottom}
+        isVanilla={isVanilla}
+      />
       <TableCell
         text={relativeStrengthPercent}
         isOdd={isOdd}
         isLast={true}
         isBottom={isBottom}
+        isVanilla={isVanilla}
       />
     </>
   );
