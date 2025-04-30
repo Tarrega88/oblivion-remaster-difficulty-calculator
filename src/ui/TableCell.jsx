@@ -14,7 +14,7 @@ function TableCell({ text, isOdd, isLast, isBottom, isVanilla }) {
 
   return (
     <div
-      className={`${bgColor} ${borderLast} ${bottomBorder} text-ironshade-50 border-t-ironshade-200 border-l-ironshade-200 border-t border-l px-1 py-1 text-center`}
+      className={`${bgColor} ${borderLast} ${bottomBorder} text-ironshade-50 border-t-ironshade-200 border-l-ironshade-200 border-t border-l py-1 text-center text-xs sm:px-1 sm:text-base`}
     >
       {text}
     </div>

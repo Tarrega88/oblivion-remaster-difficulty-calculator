@@ -12,14 +12,14 @@ function CollapsibleWrapper({ text, children, lightHover = false }) {
   const bgColor = lightHover ? "bg-ironshade-600" : "bg-ironshade-700";
 
   const contentStyles = isOpen
-    ? "h-96 opacity-100 pointer-events-auto"
+    ? "h-full sm:h-96 opacity-100 pointer-events-auto"
     : "h-0 opacity-0 pointer-events-none select-none";
 
   function handleClick() {
     setIsOpen(!isOpen);
   }
   return (
-    <div className={`px-12 py-4 ${bgColor}`}>
+    <div className={`px-12 py-4 ${bgColor} overflow-hidden`}>
       <div
         className={`${hoverColor} flex cursor-pointer items-center justify-center rounded-md transition-all duration-300`}
         onClick={handleClick}

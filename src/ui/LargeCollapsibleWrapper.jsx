@@ -10,7 +10,7 @@ function LargeCollapsibleWrapper({ text, children, lightHover = false }) {
     : "hover:bg-ironshade-600";
 
   const contentStyles = isOpen
-    ? "h-124 opacity-100 pointer-events-auto"
+    ? "h-full sm:h-124 opacity-100 pointer-events-auto"
     : "h-0 opacity-0 pointer-events-none select-none";
 
   function handleClick() {
@@ -18,7 +18,7 @@ function LargeCollapsibleWrapper({ text, children, lightHover = false }) {
   }
 
   return (
-    <div className="bg-ironshade-700 px-12 py-4">
+    <div className="bg-ironshade-700 px-12 py-4 sm:overflow-hidden">
       <div
         className={`${hoverColor} flex cursor-pointer items-center justify-center rounded-md transition-all duration-300`}
         onClick={handleClick}

@@ -6,7 +6,7 @@ import UserFilters from "./UserFilters";
 
 function App() {
   return (
-    <div className="bg-ironshade-800 text-ironshade-50 h-dvh w-dvw overflow-auto">
+    <div className="bg-ironshade-800 text-ironshade-50 overflow-auto sm:h-dvh sm:w-dvw">
       <TitleSection />
       <About />
       <ModVersionFilters />

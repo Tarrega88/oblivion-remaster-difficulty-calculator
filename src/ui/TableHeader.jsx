@@ -16,13 +16,13 @@ function TableHeader({
   }
 
   const styles = canClick
-    ? "bg-ironshade-800 text-ironshade-50 hover:bg-ironshade-500 cursor-pointer"
+    ? "text-ironshade-50 hover:bg-ironshade-500 cursor-pointer"
     : "";
 
   return (
     <div
       onClick={handleClick}
-      className={`${styles} sticky top-0 flex items-center justify-center transition-all duration-200 select-none`}
+      className={`${styles} bg-ironshade-800 sticky top-0 flex items-center justify-center text-sm transition-all duration-200 select-none sm:text-base`}
     >
       <div className="flex items-center gap-2 px-1 text-center">
         <div className="py-2 font-medium">{text}</div>

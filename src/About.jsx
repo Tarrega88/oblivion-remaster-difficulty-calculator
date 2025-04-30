@@ -3,7 +3,7 @@ import LargeCollapsibleWrapper from "./ui/LargeCollapsibleWrapper";
 function About() {
   return (
     <LargeCollapsibleWrapper text="About">
-      <div className="flex justify-center px-12 py-4 text-lg">
+      <div className="flex justify-center px-1 py-2 sm:px-12 sm:py-4 sm:text-lg">
         <div>
           <div className="pb-4">
             Well met, traveler. This page is intended to aid you in your quest

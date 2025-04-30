@@ -26,7 +26,6 @@ function UserFilters() {
     useMaxRelativeFilter;
 
   return (
-    // <div className="bg-ironshade-700 flex flex-col gap-4 py-4">
     <CollapsibleWrapper text="Damage Filters" lightHover={false}>
       <div className="flex flex-col gap-4 py-2">
         <Toggle
@@ -34,7 +33,7 @@ function UserFilters() {
           text="Toggle All"
           setIsOn={() => dispatch(toggleAll())}
         />
-        <div className="flex">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <Toggle
             isOn={useMinDealtFilter}
             setIsOn={() => dispatch(setUseFilter("useMinDealtFilter"))}
@@ -52,7 +51,7 @@ function UserFilters() {
             <FilterInput type="maxDealt" />
           </Toggle>
         </div>
-        <div className="flex">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <Toggle
             isOn={useMinTakenFilter}
             setIsOn={() => dispatch(setUseFilter("useMinTakenFilter"))}
@@ -70,7 +69,7 @@ function UserFilters() {
             <FilterInput type="maxTaken" />
           </Toggle>
         </div>
-        <div className="flex">
+        <div className="flex flex-col gap-2 sm:flex-row">
           <Toggle
             isOn={useMinRelativeFilter}
             setIsOn={() => dispatch(setUseFilter("useMinRelativeFilter"))}
@@ -91,7 +90,6 @@ function UserFilters() {
         </div>
       </div>
     </CollapsibleWrapper>
-    // </div>
   );
 }
 

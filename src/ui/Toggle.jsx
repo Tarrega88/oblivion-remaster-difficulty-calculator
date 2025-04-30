@@ -15,20 +15,20 @@ function Toggle({ isOn = true, setIsOn, text, tooltip, children }) {
 
   return (
     <div className="flex w-full items-center justify-center gap-4">
-      <div className="flex w-60 justify-between">
-        <div className="flex px-2 text-lg" title={tooltip}>
+      <div className="flex w-full justify-between sm:w-60">
+        <div className="flex px-2 text-base sm:text-lg" title={tooltip}>
           {text}
         </div>
         {children}
       </div>
       <div
         onClick={() => setIsOn(!isOn)}
-        className={`flex h-8 w-24 items-center ${backgroundColor} hover:bg-stonegray-500 mx-2 cursor-pointer px-2 transition-all duration-200`}
+        className={`flex h-8 w-18 items-center sm:w-24 ${backgroundColor} hover:bg-stonegray-500 mx-2 cursor-pointer px-2 transition-all duration-200`}
       >
         <div
-          className={`text-center ${toggleColor} ${position} h-6 w-10 transition-all duration-200 select-none`}
+          className={`text-center ${toggleColor} ${position} h-6 w-5 transition-all duration-200 select-none sm:w-10`}
         >
-          {isOn ? "On" : "Off"}
+          <span className="hidden sm:inline">{isOn ? "On" : "Off"}</span>
         </div>
       </div>
     </div>
