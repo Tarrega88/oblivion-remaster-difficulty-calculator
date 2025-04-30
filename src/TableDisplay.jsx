@@ -42,7 +42,8 @@ function TableDisplay() {
   return (
     <div>
       <SectionHeader text="Difficulty Table" />
-      <div className="bg-ironshade-800 grid grid-cols-[3fr_3fr_3fr_2fr_2fr_2fr] px-8 pb-16">
+      <div className="bg-ironshade-800 grid grid-cols-[1fr_4fr_4fr_4fr_3fr_3fr_3fr] px-8 pb-16">
+        <TableHeader data={{ text: "Row" }} canClick={false} />
         {headers.map((e, i) => (
           <TableHeader
             data={e}
@@ -58,6 +59,7 @@ function TableDisplay() {
             key={i}
             isOdd={i % 2}
             isBottom={i === sortedDisplay.length - 1}
+            i={i}
           />
         ))}
       </div>

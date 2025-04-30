@@ -1,5 +1,3 @@
-import FilterInput from "./FilterInput";
-
 function Toggle({ isOn = true, setIsOn, text, tooltip, children }) {
   /*
     ember, molten, inferno, ironshade, oblivioncore, flamegold

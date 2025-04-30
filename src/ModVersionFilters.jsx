@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import Toggle from "./ui/Toggle";
 import {
+  setCustomDamage,
+  setCustomSlider,
   setDamageModShown,
   setSliderModShown,
   toggleAllDamage,
@@ -15,9 +17,10 @@ function ModVersionFilters() {
   const { damageMods, sliderMods } = useSelector((state) => state.mod);
   const dispatch = useDispatch();
 
-  const [isActive, setIsActive] = useState(false);
+  //const [isActive, setIsActive] = useState(false);
 
-  //   console.log(sliderMods);
+  const customSliderMod = sliderMods[sliderMods.length - 1];
+  const customDamageMod = damageMods[damageMods.length - 1];
 
   return (
     <div className="flex flex-col gap-4 px-12 py-4">
@@ -30,17 +33,28 @@ function ModVersionFilters() {
             isOn={sliderMods.every((e) => e.isShown)}
             setIsOn={() => dispatch(toggleAllSlider())}
           />
-          {sliderMods.map((e, i) => (
-            <Toggle
-              key={i}
-              isOn={e.isShown}
-              setIsOn={() => dispatch(setSliderModShown(e.version))}
-              text={e.version}
-            />
-          ))}
-          {/* <Toggle text="Custom">
-            <ModFilterInput />
-          </Toggle> */}
+          {sliderMods.map((e, i) =>
+            i < sliderMods.length - 1 ? (
+              <Toggle
+                key={i}
+                isOn={e.isShown}
+                setIsOn={() => dispatch(setSliderModShown(e.version))}
+                text={e.version}
+              />
+            ) : (
+              <Toggle
+                key={i}
+                isOn={e.isShown}
+                setIsOn={() => dispatch(setSliderModShown(e.version))}
+                text={e.version}
+              >
+                <ModFilterInput
+                  value={customSliderMod.multiple}
+                  onChange={(e) => dispatch(setCustomSlider(e))}
+                />
+              </Toggle>
+            ),
+          )}
         </div>
         <div className="flex w-1/2 flex-col gap-2">
           <Subheader text="More Damage Versions" />
@@ -49,14 +63,28 @@ function ModVersionFilters() {
             isOn={damageMods.every((e) => e.isShown)}
             setIsOn={() => dispatch(toggleAllDamage())}
           />
-          {damageMods.map((e, i) => (
-            <Toggle
-              key={i}
-              isOn={e.isShown}
-              setIsOn={() => dispatch(setDamageModShown(e.version))}
-              text={e.version}
-            />
-          ))}
+          {damageMods.map((e, i) =>
+            i < damageMods.length - 1 ? (
+              <Toggle
+                key={i}
+                isOn={e.isShown}
+                setIsOn={() => dispatch(setDamageModShown(e.version))}
+                text={e.version}
+              />
+            ) : (
+              <Toggle
+                key={i}
+                isOn={e.isShown}
+                setIsOn={() => dispatch(setDamageModShown(e.version))}
+                text={e.version}
+              >
+                <ModFilterInput
+                  value={customDamageMod.value}
+                  onChange={(e) => dispatch(setCustomDamage(e))}
+                />
+              </Toggle>
+            ),
+          )}
         </div>
       </div>
     </div>

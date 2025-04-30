@@ -31,9 +31,24 @@ const filterSlice = createSlice({
             const filterType = action.payload.type;
             const value = action.payload.value;
             state[filterType] = value;
+        },
+        toggleAll(state, action) {
+            const allOn = state.useMinDealtFilter &&
+                state.useMaxDealtFilter &&
+                state.useMinTakenFilter &&
+                state.useMaxTakenFilter &&
+                state.useMinRelativeFilter &&
+                state.useMaxRelativeFilter;
+
+            state.useMinDealtFilter = !allOn;
+            state.useMaxDealtFilter = !allOn;
+            state.useMinTakenFilter = !allOn;
+            state.useMaxTakenFilter = !allOn;
+            state.useMinRelativeFilter = !allOn;
+            state.useMaxRelativeFilter = !allOn;
         }
     },
 });
 
-export const { setUseFilter, setFilterValue } = filterSlice.actions;
+export const { setUseFilter, setFilterValue, toggleAll } = filterSlice.actions;
 export default filterSlice.reducer;

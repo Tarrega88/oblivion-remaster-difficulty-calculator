@@ -1,6 +1,6 @@
 import Toggle from "./ui/Toggle";
 import { useDispatch, useSelector } from "react-redux";
-import { setUseFilter } from "./redux/filterSlice";
+import { setUseFilter, toggleAll } from "./redux/filterSlice";
 import FilterInput from "./ui/FilterInput";
 import SectionHeader from "./ui/SectionHeader";
 
@@ -16,10 +16,23 @@ function UserFilters() {
 
   const dispatch = useDispatch();
 
+  const allOn =
+    useMinDealtFilter &&
+    useMaxDealtFilter &&
+    useMinTakenFilter &&
+    useMaxTakenFilter &&
+    useMinRelativeFilter &&
+    useMaxRelativeFilter;
+
   return (
     <div className="px-8 pb-2">
       <SectionHeader text="Damage Filters" />
       <div className="flex flex-col gap-4 py-2">
+        <Toggle
+          isOn={allOn}
+          text="Toggle All"
+          setIsOn={() => dispatch(toggleAll())}
+        />
         <div className="flex">
           <Toggle
             isOn={useMinDealtFilter}

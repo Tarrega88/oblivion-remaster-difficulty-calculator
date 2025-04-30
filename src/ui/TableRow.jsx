@@ -1,7 +1,7 @@
 import { decimalToPercentString } from "../helpers/conversions";
 import TableCell from "./TableCell";
 
-function TableRow({ data, isOdd, isBottom }) {
+function TableRow({ data, isOdd, isBottom, i }) {
   const {
     sliderModName,
     damageModName,
@@ -19,6 +19,12 @@ function TableRow({ data, isOdd, isBottom }) {
 
   return (
     <>
+      <TableCell
+        text={i + 1}
+        isOdd={isOdd}
+        isBottom={isBottom}
+        isVanilla={isVanilla}
+      />
       <TableCell
         text={sliderModName}
         isOdd={isOdd}
