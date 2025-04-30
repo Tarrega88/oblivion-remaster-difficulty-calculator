@@ -42,7 +42,7 @@ function UserFilters() {
             className="bg-emeraldshade-800 hover:bg-emeraldshade-700 w-48 cursor-pointer transition-all duration-200"
             onClick={() => dispatch(revertToRecommended())}
           >
-            Set to My Recommended
+            Use Recommended
           </button>
         </div>
         <div className="flex flex-col gap-2 md:flex-row">
