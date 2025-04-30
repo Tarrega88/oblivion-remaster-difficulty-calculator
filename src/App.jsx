@@ -4,7 +4,7 @@ import UserFilters from "./UserFilters";
 
 function App() {
   return (
-    <div className="bg-ironshade-800 h-dvh w-dvw text-ironshade-50">
+    <div className="bg-ironshade-800 text-ironshade-50 h-dvh w-dvw">
       {/* <Dropdown /> */}
       <UserFilters />
       <TableDisplay />

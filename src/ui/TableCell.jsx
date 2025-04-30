@@ -4,7 +4,7 @@ function TableCell({ text, isOdd, isLast }) {
 
   return (
     <div
-      className={`${bgColor} ${borderLast} text-ironshade-50 px-1 py-1 text-center border-l border-t border-t-ironshade-200 border-l-ironshade-200`}
+      className={`${bgColor} ${borderLast} text-ironshade-50 border-t-ironshade-200 border-l-ironshade-200 border-t border-l px-1 py-1 text-center`}
     >
       {text}
     </div>

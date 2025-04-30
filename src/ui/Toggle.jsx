@@ -16,7 +16,7 @@ function Toggle({ isOn = true, setIsOn }) {
   return (
     <div
       onClick={() => setIsOn(!isOn)}
-      className={`flex items-center w-24 h-8 ${backgroundColor} hover:bg-stonegray-500 transition-all duration-200 cursor-pointer mx-2 px-2`}
+      className={`flex h-8 w-24 items-center ${backgroundColor} hover:bg-stonegray-500 mx-2 cursor-pointer px-2 transition-all duration-200`}
     >
       {/* <div className="translate-x-"></div> */}
       <div
