@@ -8,12 +8,14 @@ function ModFilterInput({ onChange, value }) {
   }
 
   return (
-    <input
-      type="number"
-      className="bg-ironshade-400 text-ironshade-50 w-24 px-1"
-      onChange={handleChange}
-      value={value}
-    ></input>
+    <div className="flex items-center">
+      <input
+        type="number"
+        className="bg-ironshade-400 text-ironshade-50 h-8 w-16 px-1 text-center"
+        onChange={handleChange}
+        value={value}
+      ></input>
+    </div>
   );
 }
 

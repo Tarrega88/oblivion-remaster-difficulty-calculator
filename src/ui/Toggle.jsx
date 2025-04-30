@@ -15,8 +15,8 @@ function Toggle({ isOn = true, setIsOn, text, tooltip, children }) {
 
   return (
     <div className="flex w-full items-center justify-center gap-4">
-      <div className="flex w-48 justify-between">
-        <div className="flex px-2" title={tooltip}>
+      <div className="flex w-60 justify-between">
+        <div className="flex px-2 text-lg" title={tooltip}>
           {text}
         </div>
         {children}
