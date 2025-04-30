@@ -18,7 +18,6 @@ function CollapsibleWrapper({ text, children, lightHover = false }) {
   function handleClick() {
     setIsOpen(!isOpen);
   }
-  //px-12 py-4
   return (
     <div className={`px-12 py-4 ${bgColor}`}>
       <div

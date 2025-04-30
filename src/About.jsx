@@ -1,13 +1,4 @@
-import CollapsibleWrapper from "./ui/CollapsibleWrapper";
 import LargeCollapsibleWrapper from "./ui/LargeCollapsibleWrapper";
-
-const aboutText = " \n In order to use it";
-
-// href={link}
-// className =
-//   "text-ironshade-100 hover:text-emeraldshade-200 underline transition-all duration-200";
-// target = "_blank";
-// rel = "noopener noreferrer";
 
 function About() {
   return (

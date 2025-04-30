@@ -5,16 +5,6 @@ function Toggle({ isOn = true, setIsOn, text, tooltip, children }) {
 
     */
 
-  /*
-          <div className="flex w-56 justify-between pl-4">
-            <div className="flex items-center">Min Dealt</div>
-            <Toggle
-              isOn={useMinDealtFilter}
-              setIsOn={() => dispatch(setUseFilter("useMinDealtFilter"))}
-            />
-          </div>
-    */
-
   const backgroundColor = isOn
     ? "bg-stonegray-600 hover:bg-stonegray-500"
     : "bg-stonegray-700 hover-bg-stonegray-600";
