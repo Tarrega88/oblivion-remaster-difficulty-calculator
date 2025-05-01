@@ -6,14 +6,19 @@ import { filterByUserSettings } from "./helpers/filterLogic/filterByUserSettings
 import { sortDifficulties } from "./helpers/sorting/sortDifficulties";
 import SectionHeader from "./ui/SectionHeader";
 import { generateAllDifficulties } from "./helpers/generateAllDifficulties";
+import FilterRow from "./ui/FilterRow";
 
 const headers = [
-  { text: "Slider Mod Version", key: "sliderModName" },
-  { text: "More Damage Mod Version", key: "damageModName" },
-  { text: "Difficulty Setting", key: "difficultyName" },
-  { text: "Damage Taken", key: "taken" },
-  { text: "Damage Dealt", key: "dealt" },
-  { text: "Relative Strength", key: "relativeStrength" },
+  { text: "Slider Mod Version", shortText: "Slider Mod", key: "sliderModName" },
+  {
+    text: "More Damage Version",
+    shortText: "Damage Mod",
+    key: "damageModName",
+  },
+  { text: "Difficulty Setting", shortText: "Setting", key: "difficultyName" },
+  { text: "Damage Taken", shortText: "Taken", key: "taken" },
+  { text: "Damage Dealt", shortText: "Dealt", key: "dealt" },
+  { text: "Relative Strength", shortText: "Strength", key: "relativeStrength" },
 ];
 
 function TableDisplay() {
@@ -39,39 +44,14 @@ function TableDisplay() {
     isAscending,
   );
 
-  // return (
-  //   <div>
-  //     <SectionHeader text="Difficulty Table" />
-  //     <div className="bg-ironshade-800 grid grid-cols-[1fr_4fr_4fr_4fr_3fr_3fr_3fr] px-8 pb-16">
-  //       <TableHeader data={{ text: "Row" }} canClick={false} />
-  //       {headers.map((e, i) => (
-  //         <TableHeader
-  //           data={e}
-  //           key={i}
-  //           onClick={handleSorting}
-  //           isAscending={isAscending}
-  //           sortMethod={sortMethod}
-  //         />
-  //       ))}
-  //       {sortedDisplay.map((e, i) => (
-  //         <TableRow
-  //           data={e}
-  //           key={i}
-  //           isOdd={i % 2}
-  //           isBottom={i === sortedDisplay.length - 1}
-  //           i={i}
-  //         />
-  //       ))}
-  //     </div>
-  //   </div>
-  // );
+  //2xl:grid-cols-[1fr_4fr_4fr_4fr_3fr_3fr_3fr]
   return (
     <div>
       <SectionHeader text="Difficulty Table" />
 
       <div>
-        <div className="bg-ironshade-800 grid min-w-[800px] grid-cols-[1fr_4fr_4fr_4fr_3fr_3fr_3fr] px-8 pb-16">
-          <TableHeader data={{ text: "Row" }} canClick={false} />
+        <div className="bg-ironshade-800 grid min-w-[800px] grid-cols-[5%_20%_20%_15%_13%_12%_15%] px-8 pb-16">
+          <TableHeader data={{ text: "" }} canClick={false} />
           {headers.map((e, i) => (
             <TableHeader
               data={e}
@@ -81,6 +61,7 @@ function TableDisplay() {
               sortMethod={sortMethod}
             />
           ))}
+          <FilterRow />
           {sortedDisplay.map((e, i) => (
             <TableRow
               data={e}

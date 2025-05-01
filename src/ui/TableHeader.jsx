@@ -5,7 +5,7 @@ function TableHeader({
   isAscending,
   sortMethod = false,
 }) {
-  const { text, key } = data;
+  const { text, shortText, key } = data;
   const isSortKey = sortMethod === key;
   const arrow = isAscending ? "▲" : "▼";
   const arrowColor = isSortKey ? "text-ironshade-50" : "text-transparent";
@@ -22,10 +22,11 @@ function TableHeader({
   return (
     <div
       onClick={handleClick}
-      className={`${styles} bg-ironshade-800 sticky top-0 flex items-center justify-center text-sm transition-all duration-200 select-none sm:text-base`}
+      className={`${styles} bg-ironshade-800 sticky top-0 flex h-12 items-center justify-center text-sm transition-all duration-200 select-none md:text-base`}
     >
       <div className="flex items-center gap-2 px-1 text-center">
-        <div className="py-2 font-medium">{text}</div>
+        <span className="hidden 2xl:inline">{text}</span>
+        <span className="inline 2xl:hidden">{shortText}</span>
         {isSortKey && <div className={`text-sm ${arrowColor}`}>{arrow}</div>}
       </div>
     </div>
