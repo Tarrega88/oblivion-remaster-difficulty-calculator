@@ -5,6 +5,7 @@ function LargeCollapsibleWrapper({ text, children, lightHover = false }) {
   const [isOpen, setIsOpen] = useState(false);
   const arrow = isOpen ? "▼" : "▲";
 
+  const bgColor = lightHover ? "bg-ironshade-600" : "bg-ironshade-700";
   const hoverColor = lightHover
     ? "hover:bg-ironshade-500"
     : "hover:bg-ironshade-600";
@@ -18,7 +19,7 @@ function LargeCollapsibleWrapper({ text, children, lightHover = false }) {
   }
 
   return (
-    <div className="bg-ironshade-700 px-12 py-4 sm:overflow-hidden">
+    <div className={`px-12 py-4 sm:overflow-hidden ${bgColor} relative`}>
       <div
         className={`${hoverColor} flex cursor-pointer items-center justify-center rounded-md transition-all duration-300`}
         onClick={handleClick}

@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import filterReducer from "./filterSlice";
 import modReducer from "./modSlice";
+import guideReducer from "./guideSlice";
 import { loadState, saveState } from "../helpers/localStorage";
 
 const preloadedFilterState = loadState("filter");
@@ -10,6 +11,7 @@ const store = configureStore({
     reducer: {
         filter: filterReducer,
         mod: modReducer,
+        guide: guideReducer
     },
     preloadedState: {
         filter: preloadedFilterState,

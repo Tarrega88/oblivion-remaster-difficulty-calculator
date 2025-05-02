@@ -30,7 +30,7 @@ function UserFilters() {
     useMaxRelativeFilter;
 
   return (
-    <CollapsibleWrapper text="Damage Filters" lightHover={false}>
+    <CollapsibleWrapper text="Damage Filters" lightHover={true}>
       <div className="flex flex-col gap-4 py-2">
         <Toggle
           isOn={allOn}

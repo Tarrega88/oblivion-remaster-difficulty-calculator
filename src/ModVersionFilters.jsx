@@ -25,7 +25,7 @@ function ModVersionFilters() {
 
   return (
     // <div className="bg-ironshade-600 flex flex-col gap-4 py-4">
-    <CollapsibleWrapper text="Enabled Mod Versions" lightHover={true}>
+    <CollapsibleWrapper text="Enabled Mod Versions" lightHover={false}>
       <div className="flex flex-col justify-evenly gap-8 md:flex-row">
         <div className="flex flex-col gap-2 md:w-1/2">
           <Subheader
