@@ -2,7 +2,7 @@ import TextGuideRow from "./TextGuideRow";
 
 function TextGuideIntro() {
   return (
-    <div className="flex flex-col gap-6 px-8 pt-1 2xl:gap-7">
+    <div className="flex flex-col gap-6 pt-1 sm:px-8 2xl:gap-7">
       <TextGuideRow
         leftText="What is This For?"
         mainText={[

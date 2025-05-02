@@ -30,7 +30,7 @@ function Guide() {
   return (
     <LargeCollapsibleWrapper text="Guide" lightHover={true}>
       {/* {!isIntro && <BackButton onClick={handleGoBack} />} */}
-      <div className="flex flex-col px-8">
+      <div className="flex flex-col sm:px-8">
         {/* {sections[guideSection][guidePage] ?? sections.intro[0]} */}
         {sections.text[0]}
       </div>
