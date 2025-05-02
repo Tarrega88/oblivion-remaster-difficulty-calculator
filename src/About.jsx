@@ -1,5 +1,7 @@
 import LargeCollapsibleWrapper from "./ui/LargeCollapsibleWrapper";
 
+//"https://www.nexusmods.com/oblivionremastered/mods/269"
+//"https://www.nexusmods.com/oblivionremastered/mods/58"
 function About() {
   return (
     <LargeCollapsibleWrapper text="About">
@@ -10,10 +12,32 @@ function About() {
             to discover the perfect difficulty in Oblivion Remastered.
           </div>
           <div className="pb-4">
+            The main feature of this page is the table that displays all
+            possible damage combinations that result from combining the{" "}
+            <a
+              href="https://www.nexusmods.com/oblivionremastered/mods/269"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ember-200 underline underline-offset-3 transition-all duration-200"
+            >
+              More Damage
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.nexusmods.com/oblivionremastered/mods/58"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ember-200 underline underline-offset-3 transition-all duration-200"
+            >
+              Difficulty Slider Fixed
+            </a>{" "}
+            mods.
+          </div>
+          <div className="pb-4">
             Oblivion Remastered difficulty is currently a little spongey at
-            higher difficulties, so the mod authors of "Difficulty Slider Fixed"
-            and "More Damage" have offered solutions which, when combined, offer
-            a much more balanced and challenging game.
+            higher difficulties, so the mod authors have offered solutions
+            which, when combined, offer a much more balanced and challenging
+            game.
           </div>
           <div className="pb-4">
             - Enabled Mods Versions: Allows you to select which versions of the
