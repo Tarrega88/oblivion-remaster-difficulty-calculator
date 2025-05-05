@@ -44,7 +44,6 @@ function TableDisplay() {
     isAscending,
   );
 
-  //2xl:grid-cols-[1fr_4fr_4fr_4fr_3fr_3fr_3fr]
   return (
     <div>
       <SectionHeader text="Difficulty Table" />
@@ -65,7 +64,7 @@ function TableDisplay() {
           {sortedDisplay.map((e, i) => (
             <TableRow
               data={e}
-              key={i}
+              key={e.sliderModName + e.damageModName + e.difficultyName}
               isOdd={i % 2}
               isBottom={i === sortedDisplay.length - 1}
               i={i}

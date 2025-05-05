@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { decimalToPercentString } from "../helpers/conversions";
 import TableCell from "./TableCell";
 
@@ -10,6 +11,8 @@ function TableRow({ data, isOdd, isBottom, i }) {
     dealt,
     relativeStrength,
   } = data;
+
+  const [isSelected, setIsSelected] = useState(false);
 
   const takenPercent = decimalToPercentString(taken);
   const dealtPercent = decimalToPercentString(dealt);
@@ -29,6 +32,10 @@ function TableRow({ data, isOdd, isBottom, i }) {
 
   const descriptionText = `${modText}you will take ${takenPercent} damage, deal ${dealtPercent} damage, and be ${relativeStrengthPercent} as strong as the enemies.`;
 
+  function handleClick() {
+    setIsSelected((selected) => !selected);
+  }
+
   return (
     <>
       <TableCell
@@ -36,36 +43,48 @@ function TableRow({ data, isOdd, isBottom, i }) {
         isOdd={isOdd}
         isBottom={isBottom}
         isVanilla={isVanilla}
+        isSelected={isSelected}
+        onClick={handleClick}
       />
       <TableCell
         text={sliderModName}
         isOdd={isOdd}
         isBottom={isBottom}
         isVanilla={isVanilla}
+        isSelected={isSelected}
+        onClick={handleClick}
       />
       <TableCell
         text={damageModName}
         isOdd={isOdd}
         isBottom={isBottom}
         isVanilla={isVanilla}
+        isSelected={isSelected}
+        onClick={handleClick}
       />
       <TableCell
         text={difficultyName}
         isOdd={isOdd}
         isBottom={isBottom}
         isVanilla={isVanilla}
+        isSelected={isSelected}
+        onClick={handleClick}
       />
       <TableCell
         text={takenPercent}
         isOdd={isOdd}
         isBottom={isBottom}
         isVanilla={isVanilla}
+        isSelected={isSelected}
+        onClick={handleClick}
       />
       <TableCell
         text={dealtPercent}
         isOdd={isOdd}
         isBottom={isBottom}
         isVanilla={isVanilla}
+        isSelected={isSelected}
+        onClick={handleClick}
       />
       <TableCell
         text={relativeStrengthPercent}
@@ -73,6 +92,8 @@ function TableRow({ data, isOdd, isBottom, i }) {
         isLast={true}
         isBottom={isBottom}
         isVanilla={isVanilla}
+        isSelected={isSelected}
+        onClick={handleClick}
       />
     </>
   );
