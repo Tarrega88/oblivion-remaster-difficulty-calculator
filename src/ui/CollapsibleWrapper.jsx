@@ -12,7 +12,7 @@ function CollapsibleWrapper({ text, children, lightHover = false }) {
   const bgColor = lightHover ? "bg-ironshade-600" : "bg-ironshade-700";
 
   const contentStyles = isOpen
-    ? "h-full md:h-96 opacity-100 pointer-events-auto"
+    ? "h-full sm:h-180 md:h-132 lg:h-112 xl:h-96 2xl:h-104 opacity-100 pointer-events-auto"
     : "h-0 opacity-0 pointer-events-none select-none";
 
   function handleClick() {

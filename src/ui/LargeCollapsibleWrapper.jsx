@@ -10,8 +10,10 @@ function LargeCollapsibleWrapper({ text, children, lightHover = false }) {
     ? "hover:bg-ironshade-500"
     : "hover:bg-ironshade-600";
 
+  //lg:h-192
+  //xl:h-148
   const contentStyles = isOpen
-    ? "h-full sm:h-264 md:h-224 lg:h-192 xl:h-148 opacity-100 pointer-events-auto"
+    ? "h-full sm:h-280 md:h-240 lg:h-192 xl:h-192 opacity-100 pointer-events-auto"
     : "h-0 opacity-0 pointer-events-none select-none";
 
   function handleClick() {

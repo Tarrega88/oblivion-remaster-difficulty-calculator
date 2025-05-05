@@ -1,11 +1,12 @@
+import CollapsibleWrapper from "./ui/CollapsibleWrapper";
 import LargeCollapsibleWrapper from "./ui/LargeCollapsibleWrapper";
 
 //"https://www.nexusmods.com/oblivionremastered/mods/269"
 //"https://www.nexusmods.com/oblivionremastered/mods/58"
 function About() {
   return (
-    <LargeCollapsibleWrapper text="About">
-      <div className="flex justify-center px-1 py-2 sm:px-12 sm:py-4 sm:text-lg">
+    <CollapsibleWrapper text="About">
+      <div className="flex px-1 py-2 sm:px-8 sm:py-4 sm:text-lg">
         <div>
           <div className="pb-4">
             Well met, traveler. This page is intended to aid you in your quest
@@ -18,7 +19,7 @@ function About() {
               href="https://www.nexusmods.com/oblivionremastered/mods/269"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-ember-200 underline underline-offset-3 transition-all duration-200"
+              className="hover:text-ember-200 text-ember-300 underline underline-offset-3 transition-all duration-200"
             >
               More Damage
             </a>{" "}
@@ -27,7 +28,7 @@ function About() {
               href="https://www.nexusmods.com/oblivionremastered/mods/58"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-ember-200 underline underline-offset-3 transition-all duration-200"
+              className="hover:text-ember-200 text-ember-300 underline underline-offset-3 transition-all duration-200"
             >
               Difficulty Slider Fixed
             </a>{" "}
@@ -79,7 +80,7 @@ function About() {
           </a>
         </div>
       </div>
-    </LargeCollapsibleWrapper>
+    </CollapsibleWrapper>
   );
 }
 
