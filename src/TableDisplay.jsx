@@ -27,6 +27,7 @@ const headers = [
 ];
 
 function TableDisplay() {
+  //repush comment
   const [showChart, setShowChart] = useState(false);
   const filters = useSelector((state) => state.filter);
   const sliderMods = useSelector((state) => state.mod.sliderMods);
