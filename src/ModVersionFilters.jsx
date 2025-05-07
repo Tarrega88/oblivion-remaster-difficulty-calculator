@@ -34,7 +34,7 @@ function ModVersionFilters() {
           />
           <Toggle
             text="Toggle All"
-            isOn={sliderMods.every((e) => e.isShown)}
+            isOn={sliderMods.slice(0, -1).every((e) => e.isShown)}
             setIsOn={() => dispatch(toggleAllSlider())}
           />
           {sliderMods.map((e, i) =>
@@ -67,7 +67,7 @@ function ModVersionFilters() {
           />
           <Toggle
             text="Toggle All"
-            isOn={damageMods.every((e) => e.isShown)}
+            isOn={damageMods.slice(0, -1).every((e) => e.isShown)}
             setIsOn={() => dispatch(toggleAllDamage())}
           />
           {damageMods.map((e, i) =>

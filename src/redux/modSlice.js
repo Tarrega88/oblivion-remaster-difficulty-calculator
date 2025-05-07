@@ -37,14 +37,16 @@ const modSlice = createSlice({
             if (mod) mod.isShown = !mod.isShown;
         },
         toggleAllSlider(state) {
-            const toggleValue = state.sliderMods.every(e => e.isShown);
-            for (const mod of state.sliderMods) {
+            const sliced = state.sliderMods.slice(0, -1);
+            const toggleValue = sliced.every(e => e.isShown);
+            for (const mod of sliced) {
                 mod.isShown = !toggleValue;
             }
         },
         toggleAllDamage(state) {
-            const toggleValue = state.damageMods.every(e => e.isShown);
-            for (const mod of state.damageMods) {
+            const sliced = state.damageMods.slice(0, -1);
+            const toggleValue = sliced.every(e => e.isShown);
+            for (const mod of sliced) {
                 mod.isShown = !toggleValue;
             }
         },
