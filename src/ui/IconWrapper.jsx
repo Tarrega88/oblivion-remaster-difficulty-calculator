@@ -1,7 +1,7 @@
 function IconWrapper({ isSelected, onClick, children }) {
   const style = isSelected
     ? "bg-emeraldshade-700 hover:bg-emeraldshade-600"
-    : "bg-ironshade-700 opacity-75";
+    : "bg-ironshade-700 opacity-75 hover:bg-ironshade-600";
 
   return (
     <div
