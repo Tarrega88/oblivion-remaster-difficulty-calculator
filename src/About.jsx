@@ -8,6 +8,10 @@ function About() {
     <CollapsibleWrapper text="About">
       <div className="flex px-1 py-2 sm:px-8 sm:py-4 sm:text-lg">
         <div>
+          <div className="pb-2 text-lg">Update:</div>
+          <div className="border-b pb-2">
+            As of patch 1.2, modding the damage is no longer needed
+          </div>
           <div className="pb-4">
             Well met, traveler. This page is intended to aid you in your quest
             to discover the perfect difficulty in Oblivion Remastered.
